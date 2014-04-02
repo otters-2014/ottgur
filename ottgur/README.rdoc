@@ -1,3 +1,5 @@
+[Ottgur Schema 1.0](http://marcmo.minus.com/i/b2nnUeuintv7C)
+
 == README
 
 This README would normally document whatever steps are necessary to get the
