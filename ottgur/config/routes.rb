@@ -3,7 +3,7 @@ Devise::Application.routes.draw do
   root 'static_pages#index'
 
   resources :user, only: [:show, :update], shallow: true do
-    resources :posts do 
+    resources :posts do
       resources :comments
     end
   end
