@@ -1,7 +1,14 @@
 Devise::Application.routes.draw do
+  # get "images/create"
+  # get "images/delete"
+  # get "images/show"
+  # get "images/index"
+
+  # resources :images
+
   devise_for :users
   root 'static_pages#index'
-
+  resources :images, only: [:show, :create, :delete, :index]
   resources :user, only: [:show, :update], shallow: true do
     resources :posts do
       resources :comments

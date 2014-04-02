@@ -72,7 +72,7 @@
   <div class="content">
 
     <h2>Upload Your Image!</h2>
-    <%= form_tag do %>
+    <%= form_tag({controller: "images", action: "create"}, multipart: true) do %>
       <%= file_field_tag(:path) %>
       <%= text_field_tag(:caption, "caption!") %>
       <%= submit_tag("Upload!") %>
