@@ -6,3 +6,7 @@
 	<%= link_to "Sign in", new_user_session_path %>
   You are not signed in
 <% end %>
+
+<% @images.each do |image| %>
+  <img src="<%=image.submission%>">
+<% end %>
