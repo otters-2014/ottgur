@@ -20,7 +20,21 @@ feature "the homepage" do
 end
 
 
-  describe "Sign up" do
+  feature "Sign up" do
+    it "must render sign up" do
+      get 'sign_up'
+      expect(response).to render_template("devise/registrations/_form_new")
+    end
+  end
+
+  feature "Sign in" do
+    it "must render sign up" do
+      get 'sign_up'
+      expect(response).to render_template("devise/registrations/_form_new")
+    end
+  end
+
+    feature "Sign out" do
     it "must render sign up" do
       get 'sign_up'
       expect(response).to render_template("devise/registrations/_form_new")

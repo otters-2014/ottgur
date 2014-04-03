@@ -1,0 +1,11 @@
+<h2>Sign up</h2>
+  <%= form_for(User.new, url: user_registration_path) do |f| %>
+
+     <li><%= f.email_field :email, autofocus: true, placehoder: "email" %></li>
+      <li><%= f.password_field :password, autocomplete: "off", placeholder: "password" %></li>
+
+      <li class="divider"></li>
+      <li><%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "password confirmation" %></li>
+      <li><%= f.submit "Sign up" %></li>
+  <% end %> <!--end for form -->
+
