@@ -4,7 +4,7 @@ class ImagesController < ApplicationController
     @image = Image.new
     @image.submission = params[:path]
     @image.save!
-
+    redirect_to root_path
   end
 
   def delete
@@ -12,6 +12,7 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
+    @comments = Comment.where(image_id: @image.id)
   end
 
   def index
