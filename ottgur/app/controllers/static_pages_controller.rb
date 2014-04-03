@@ -6,8 +6,23 @@ class StaticPagesController < ApplicationController
   end
 
   def hidden
-
+    redirect_to "http://google.com"
   end
+
+    def sign_in
+      @user = User.new
+      # render partial: "devise/sessions/form"
+      redirect_to '/'
+  end
+
+    def create
+      image = Image.new
+      image.submission = params[:path]
+      # binding.pry
+      image.save!
+  end
+
+
 
   private
 

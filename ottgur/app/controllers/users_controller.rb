@@ -9,6 +9,12 @@ class UsersController < ApplicationController
       end
   end
 
+  def sign_in
+      @user = User.new
+      # render partial: "devise/sessions/form"
+      redirect_to '/'
+  end
+
   def show
     redirect_to root_path
   end

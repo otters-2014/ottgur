@@ -7,13 +7,33 @@ Devise::Application.routes.draw do
   # resources :images
 
   devise_for :users
-  root 'static_pages#index'
+  # do
+  #   get 'users/sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
+  #   # get 'signin' => 'devise/sessions#new', :as => :new_user_session
+    # post 'signin' => 'devise/sessions#create' :as => :user_session
+devise_scope :user do
+    get "/users/sign_out", to: "devise/sessions#destroy"
+    # get "/users/sign_in", to: "devise/sessions#create"
+end
 
-  resources :images, only: [:show, :create, :delete, :index] do
-    resources :comments
-  end
 
-  resources :user, only: [:show, :update], shallow: true
+
+      root 'static_pages#index'
+
+
+  # resources :images, only: [:show, :create, :delete, :index] do
+  #   resources :comments
+  # end
+
+
+    resources :user, only: [:show, :update], shallow: true do
+      resources :images, only: [:show, :create, :delete, :index], shallow: true do
+        resources :comments, shallow: true
+      end
+    end
+
+    resources :images
 
   match 'hidden', to: 'static_pages#hidden', via: "get", as: "hidden"
 

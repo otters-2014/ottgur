@@ -8,8 +8,9 @@
 </head>
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
+        <% yield %>
         <div class="navbar-header">
           <a href="../" class="navbar-brand">Bootswatch</a>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
@@ -59,21 +60,65 @@
               </ul>
             </li>
           </ul>
-  <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+          <ul class="nav navbar-nav navbar-right">
+            <% if !user_signed_in? %>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Sign Up</span></a>
+              <ul class="dropdown-menu" >
+                <%= form_for(User.new, url: user_registration_path) do |f| %>
+
+<!-- {controller: 'devise/registrations', action: 'create'} -->
+
+                <li><%= f.email_field :email, autofocus: true, placehoder: "email" %></li>
+                <li><%= f.password_field :password, autocomplete: "off", placeholder: "password" %></li>
+                <li class="divider"></li>
+                <li><%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "password confirmation" %></li>
+                <li><%= f.submit "Sign up" %></li>
+                <% end %>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Sign In</span></a>
+              <ul class="dropdown-menu" aria-labelledby="download">
+
+              <%= render partial: "devise/sessions/form" %>
+
+                <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
+                <li><a href="./bootstrap.css">bootstrap.css</a></li>
+                <li class="divider"></li>
+                <li><a href="./variables.less">variables.less</a></li>
+                <li><a href="./bootswatch.less">bootswatch.less</a></li>
+              </ul>
+            </li>
+            <% else %>
+            <li>
+              <%= link_to "Sign Out", destroy_user_session_path %>
+              <!-- #, method: :delete  -->
+            </li>
+            <% end %>
+          </ul>
+
+        </div>
+      </div>
+    </div>
 
   <div class="content">
 
     <h2>Upload Your Image!</h2>
     <%= form_tag({controller: "images", action: "create"}, multipart: true) do %>
+    <!-- = form_tag({controller: "images", action: "create"}, multipart: true) do  -->
+
       <%= file_field_tag(:path) %>
       <%= text_field_tag(:caption, "caption!") %>
       <%= submit_tag("Upload!") %>
     <% end %>
 
+
+
     <%= yield %>
+
 
 </div>
 </body>

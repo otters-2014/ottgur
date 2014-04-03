@@ -1,4 +1,4 @@
-module UsersHelper
+module StaticPagesHelper
 
   def resource_name
     :user
