@@ -9,9 +9,21 @@ Devise::Application.routes.draw do
   devise_for :users
   root 'static_pages#index'
 
-  resources :images, only: [:show, :create, :delete, :index] do
-    resources :comments
-  end
+  # resources :images, only: [:show, :create, :delete, :index] do
+  #   resources :comments
+  # end
+
+  get  '/images/:image_id/comments', to: 'comments#index', as: 'image_comments'
+  post '/images/:image_id/comments' => 'comments#create'
+  get  '/images/:image_id/comments/new', to: 'comments#new', as: 'new_image_comment'
+  get  '/images/:image_id/comments/:id/edit', to: 'comments#edit', as: 'edit_image_comment'
+  get  '/images/:image_id/comments/:id', to: 'comments#show', as: 'image_comment'
+  patch '/images/:image_id/comments/:id' => 'comments#update'
+  put '/images/:image_id/comments/:id' => 'comments#update'
+  delete '/images/:image_id/comments/:id' => 'comments#destroy'
+  get  '/images', to: 'images#index', as: 'images'
+  post '/images' => 'images#create'
+  get  '/images/:id', to: 'images#show', as: 'image'
 
   resources :user, only: [:show, :update], shallow: true
 
