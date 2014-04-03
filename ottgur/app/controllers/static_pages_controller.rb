@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
     def sign_in
       @user = User.new
       # render partial: "devise/sessions/form"
-      redirect_to '/'
+      render_to root_path
   end
 
     def create
