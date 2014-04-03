@@ -98,7 +98,7 @@
   <div class="content">
 
     <h2>Upload Your Image!</h2>
-    <%= form_tag({controller: "images", action: "create"}, multipart: true) do %>
+    <%= form_tag(images_path, method: "post", multipart: true) do %>
     <!-- = form_tag({controller: "images", action: "create"}, multipart: true) do  -->
 
       <%= file_field_tag(:path) %>
