@@ -1,5 +1,7 @@
 
 
 <% @images.each do |image| %>
-  <a href="images/<%=image.id%>"><img src="<%=image.submission%>"></a>
+
+  <a href="images/<%=image.id%>"><img src="<%=image.submission.thumb.url %>"></a>
+
 <% end %>

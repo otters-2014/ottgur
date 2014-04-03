@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem "bootstrap-sass"
 
+gem "mini_magick"
+
 #add for Heroku per docs
 gem 'rails_12factor', group: [:production]
 

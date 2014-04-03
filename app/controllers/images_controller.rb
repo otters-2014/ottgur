@@ -1,10 +1,10 @@
 class ImagesController < ApplicationController
   def create
-    image = Image.new
-    image.submission = params[:path]
-    # binding.pry
-    image.save!
-    redirect_to root_path
+
+    @image = Image.new
+    @image.submission = params[:path]
+    @image.save!
+
   end
 
   def delete
