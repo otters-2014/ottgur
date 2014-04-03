@@ -1,12 +1,5 @@
 
-<% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    You are signed in
-<% else %>
-	<%= link_to "Sign in", new_user_session_path %>
-  You are not signed in
-<% end %>
 
 <% @images.each do |image| %>
-  <img src="<%=image.submission%>">
+  <a href="images/<%=image.id%>"><img src="<%=image.submission%>"></a>
 <% end %>

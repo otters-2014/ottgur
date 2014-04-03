@@ -31,8 +31,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'carrierwave'
-
 gem "bootstrap-sass"
 
 #add for Heroku per docs
@@ -51,6 +49,8 @@ group :development, :test do
   #Added shoulda-matchers 4:30pm 4/2/14
   gem 'shoulda-matchers'
 end
+
+gem 'carrierwave'
 
 
 # Use ActiveModel has_secure_password
