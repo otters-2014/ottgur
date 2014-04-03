@@ -1,2 +1,6 @@
-<h1>Images#index</h1>
-<p>Find me in app/views/images/index.html.erb</p>
+
+<% @images.each do |image| %>
+
+  <a href="images/<%=image.id%>"><img src="<%=image.submission.thumb.url %>"></a>
+
+<% end %>
