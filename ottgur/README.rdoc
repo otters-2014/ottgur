@@ -2,29 +2,6 @@
 
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Day 1:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+We made good progress developing our app concept and working through user stories and MVP goal. We were mindful of not dividing crtical initialization work (db) and instead had half the team do that while the others worked on integrating frameworks. In the afternoon we worked on testing separate features, signin and image upload. The signin team hit some bumps but the image upload team reached their goals. In hindsite, maybe we could have worked on writing our tests collectively to share common learnings and practices. I'm concerned about writing/merging to master even if it's for what appears to be benign syncing of files. In a real-world environment, we may not have this access or it may be frowned upon. I'd like to see us tighten up our git workflow and leave all merges for the merge bosses.
