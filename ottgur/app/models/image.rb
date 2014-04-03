@@ -3,4 +3,6 @@ class Image < ActiveRecord::Base
   has_many :votes
   has_many :favorites
   has_many :comments
+
+  mount_uploader :submission, SubmissionUploader
 end
