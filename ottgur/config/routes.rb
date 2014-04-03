@@ -8,12 +8,12 @@ Devise::Application.routes.draw do
 
   devise_for :users
   root 'static_pages#index'
-  resources :images, only: [:show, :create, :delete, :index]
-  resources :user, only: [:show, :update], shallow: true do
-    resources :posts do
-      resources :comments
-    end
+
+  resources :images, only: [:show, :create, :delete, :index] do
+    resources :comments
   end
+
+  resources :user, only: [:show, :update], shallow: true
 
   match 'hidden', to: 'static_pages#hidden', via: "get", as: "hidden"
 
