@@ -34,6 +34,7 @@ What we'd like it the ability to:
 
 1. Upvote/downvote (only one, maybe use js)
 2. Favorite button (for the current user to add image to their list of favorites)
+3. An uploaded picture should probably show the email of the user who uploaded it.
 
 ^^^ Our current models/migrations should be set up to allow for votes/favorites already
 
