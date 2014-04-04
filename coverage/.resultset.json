@@ -1,14 +1,22 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/environment.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/environment.rb": [
+>>>>>>> adds coverage directory
         null,
         1,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/application.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/application.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         null,
@@ -40,13 +48,21 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/boot.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/boot.rb": [
+>>>>>>> adds coverage directory
         null,
         1,
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/environments/test.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/environments/test.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         null,
@@ -84,7 +100,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/initializers/backtrace_silencers.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/initializers/backtrace_silencers.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         null,
@@ -93,7 +113,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/initializers/devise.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/initializers/devise.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         1,
@@ -351,13 +375,21 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/initializers/filter_parameter_logging.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/initializers/filter_parameter_logging.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/initializers/inflections.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/initializers/inflections.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         null,
@@ -375,14 +407,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/initializers/mime_types.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/initializers/mime_types.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         null,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/initializers/secret_token.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/initializers/secret_token.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         null,
@@ -396,12 +436,20 @@
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/initializers/session_store.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/initializers/session_store.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         1
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/initializers/wrap_parameters.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/initializers/wrap_parameters.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         null,
@@ -417,7 +465,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/config/routes.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/config/routes.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         1,
@@ -440,7 +492,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/models/user.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/models/user.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         1,
@@ -453,6 +509,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/helpers/application_helper.rb": [
         1,
         null
@@ -462,6 +519,17 @@
         null
       ],
       "/Users/apprentice/ottgur/app/helpers/static_pages_helper.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/ottgur/app/helpers/images_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/ottgur/app/helpers/static_pages_helper.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -478,7 +546,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/helpers/users_helper.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/helpers/users_helper.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -495,7 +567,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/controllers/comments_controller.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/controllers/comments_controller.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -507,14 +583,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/controllers/application_controller.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/controllers/application_controller.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         null,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/controllers/images_controller_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/controllers/images_controller_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -575,7 +659,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/controllers/images_controller.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/controllers/images_controller.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         null,
@@ -598,14 +686,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/controllers/users_controller_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/controllers/users_controller_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/controllers/users_controller.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/controllers/users_controller.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -629,7 +725,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/features/homepage_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/features/homepage_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         null,
@@ -674,7 +774,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/features/upload_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/features/upload_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -708,7 +812,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/helpers/users_helper_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/helpers/users_helper_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         null,
@@ -725,7 +833,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/models/comment_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/models/comment_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -734,7 +846,11 @@
         2,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/models/comment.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/models/comment.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         null,
@@ -742,7 +858,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/models/favorite_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/models/favorite_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -750,13 +870,21 @@
         2,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/models/favorite.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/models/favorite.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/models/image_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/models/image_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -768,7 +896,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/models/image.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/models/image.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         1,
@@ -778,7 +910,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/uploaders/submission_uploader.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/uploaders/submission_uploader.rb": [
+>>>>>>> adds coverage directory
         null,
         null,
         1,
@@ -831,7 +967,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/models/user_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/models/user_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -842,7 +982,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/spec/models/vote_spec.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/spec/models/vote_spec.rb": [
+>>>>>>> adds coverage directory
         1,
         null,
         1,
@@ -850,13 +994,21 @@
         2,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/models/vote.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/models/vote.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/apprentice/ottgur/app/controllers/static_pages_controller.rb": [
+=======
+      "/Users/apprentice/Desktop/ottgur/app/controllers/static_pages_controller.rb": [
+>>>>>>> adds coverage directory
         1,
         1,
         null,
@@ -894,6 +1046,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1396650378
+=======
+    "timestamp": 1396654568
+>>>>>>> adds coverage directory
   }
 }
