@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def index
 
       if user_signed_in?
-        @user = User.find(params[:id])
+        @user = current_user
       else
         render_to root_path
       end
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    redirect_to root_path
+    user_path
   end
 
 end
