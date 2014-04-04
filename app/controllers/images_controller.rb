@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
     redirect_to root_path
   end
 
-  def delete
+  def destroy
   end
 
   def show
