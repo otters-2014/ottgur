@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
-  def create
+  before_action :get_image
 
+  def create
     @image = Image.new
     @image.submission = params[:path]
     @image.save!
@@ -17,5 +18,17 @@ class ImagesController < ApplicationController
   end
 
   def index
+    @images = Image.all
+  end
+
+  private
+
+   def post_params
+    params.require(:image).permit(:file)
+  end
+
+  def get_image
+    @post ||= Post.find(params[:id]) unless params[:id].nil?
+    @posts = Post.all
   end
 end

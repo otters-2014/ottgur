@@ -4,7 +4,7 @@ Devise::Application.routes.draw do
       get "/users/sign_out", to: "devise/sessions#destroy"
   end
 
-  root 'static_pages#index'
+  root 'images#index'
 
   # patch '/images' to: "comments#create"
 
