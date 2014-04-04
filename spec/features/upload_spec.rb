@@ -5,18 +5,22 @@ feature 'User browsing the website' do
 
     it 'can see an upload form' do
       visit '/'
-      expect(page).to have_content 'Upload Your Image!'
+      expect(page).to have_content 'Image Upload'
     end
 
     it 'can upload a photo' do
       visit '/'
-
       expect {
+        click_link("Upload")
+        sleep(5)
         attach_file('path', 'pic.jpg')
         fill_in('caption', with: 'some text about the image')
-        click_button('Upload!')
+        # save_and_open_page
+        page.find("input[value='Upload!']").click
       }.to change(Image, :count).by(1)
       # expect(page).to have_content 'Upload Complete!'
+        # page.should have_content('Image Upload') # async
+
     end
   end
 

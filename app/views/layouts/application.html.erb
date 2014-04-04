@@ -6,13 +6,22 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+ <style type="text/css">
+    .modal.fade, .fade {
+      -webkit-transition: opacity 0.01s;
+      -moz-transition: opacity 0.01s;
+      -ms-transition: opacity 0.01s;
+      -o-transition: opacity 0.01s;
+      transition: opacity 0.01s;
+    }
+ </style>
 <body>
 
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <% yield %>
         <div class="navbar-header">
-          <a href="../" class="navbar-brand">Ottgur</a>
+          <%= link_to "Ottgur", root_path, class: "navbar-brand" %>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
