@@ -6,5 +6,6 @@
   <%= f.submit "add comment" %>
 <% end %>
 <% @comments.each do |comment| %>
-  <p><%=comment.text%></p>
+  <p><%= comment.text %></p>
+  <p><%= @user.user_id %></p>  
 <% end %>
