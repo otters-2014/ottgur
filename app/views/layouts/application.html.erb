@@ -6,15 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
- <style type="text/css">
-    .modal.fade, .fade {
-      -webkit-transition: opacity 0.01s;
-      -moz-transition: opacity 0.01s;
-      -ms-transition: opacity 0.01s;
-      -o-transition: opacity 0.01s;
-      transition: opacity 0.01s;
-    }
- </style>
+
 <body>
 
     <div class="navbar navbar-default navbar-fixed-top">
@@ -34,19 +26,6 @@
             </li>
             <li>
               <a href="#" data-toggle="modal" data-target="#upload" >Upload</a>
-            </li>
-            <li>
-              <a href="http://news.bootswatch.com">Blog</a>
-            </li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>
-              <ul class="dropdown-menu" aria-labelledby="download">
-                <li><a href="./bootstrap.min.css">bootstrap.min.css</a></li>
-                <li><a href="./bootstrap.css">bootstrap.css</a></li>
-                <li class="divider"></li>
-                <li><a href="./variables.less">variables.less</a></li>
-                <li><a href="./bootswatch.less">bootswatch.less</a></li>
-              </ul>
             </li>
           </ul>
 
