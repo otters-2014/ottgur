@@ -50,6 +50,7 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.2.0'
   #Added shoulda-matchers 4:30pm 4/2/14
   gem 'shoulda-matchers'
+  gem 'coveralls', require: false
 end
 
 gem 'carrierwave'
