@@ -19,7 +19,6 @@
 
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <% yield %>
         <div class="navbar-header">
           <%= link_to "Ottgur", root_path, class: "navbar-brand" %>
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
@@ -88,13 +87,14 @@
   <div class="content">
 
 
-    <%= render '/images/upload_modal' %>
-
-
-
 
     <%= yield %>
 
+    <% if !user_signed_in? %>
+    <%= render 'layouts/signin_signup_modal' %>
+    <% else %>
+    <%= render '/images/upload_modal' %>
+    <% end %>
 
 </div>
 </body>
