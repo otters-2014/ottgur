@@ -1,6 +1,6 @@
 [Ottgur Schema 1.0](http://marcmo.minus.com/i/b2nnUeuintv7C)
 
-![Trello User Stories and Tasks](https://trello.com/b/8845ba6Z/ottgur)
+[Trello User Stories and Tasks](https://trello.com/b/8845ba6Z/ottgur)
 
 *DAY 1 RETROSPECTIVES
 
