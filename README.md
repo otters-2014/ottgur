@@ -12,7 +12,11 @@ Immediately after choosing to do an image upload app, I felt fairly overwhelmed.
 
 #*Day 2*
 
-gems/tools we're using:
+pending...
+
+
+
+#Gems/tools we're using:
 
 * CarrierWave
   * Need to install ImageMagick
