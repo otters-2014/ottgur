@@ -18,4 +18,9 @@ class ImagesController < ApplicationController
 
   def index
   end
+
+  def favorite
+    @user = current_user
+    favorite = Favorite.create(user_id: @user.id, image_id: params[:id])
+  end
 end

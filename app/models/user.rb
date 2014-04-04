@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :favorites
+  has_many :favorited_images, through: :favorites
   has_many :votes
   has_many :images
   has_many :comments

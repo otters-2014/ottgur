@@ -5,6 +5,10 @@
   <%= f.text_field :text, :placeholder => "comment here!" %>
   <%= f.submit "add comment" %>
 <% end %>
+<% if current_user %>
+  <%= link_to 'Favorite', "#{user_favorites_path(current_user)}/#{params[:id]}" %>
+<% end %>
+<%= params %>
 <% @comments.each do |comment| %>
   <p><%= comment.text %></p>
   <p><%= comment.user.email %></p>
