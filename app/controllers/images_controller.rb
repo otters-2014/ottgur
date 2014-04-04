@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
   end
 
   def show
+    @user = current_user
     @image = Image.find(params[:id])
     @comments = Comment.where(image_id: @image.id)
   end
