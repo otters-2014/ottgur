@@ -6,9 +6,8 @@
   <%= f.submit "add comment" %>
 <% end %>
 <% if current_user %>
-  <%= link_to 'Favorite', "#{user_favorites_path(current_user)}/#{params[:id]}" %>
+  <%= link_to 'Favorite', favorite_path %>
 <% end %>
-<%= params %>
 <% @comments.each do |comment| %>
   <p><%= comment.text %></p>
   <p><%= comment.user.email %></p>
