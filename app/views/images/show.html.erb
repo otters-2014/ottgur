@@ -4,6 +4,10 @@
 <p><img src="<%= @image.submission %>"></p>
 <span class="glyphicon glyphicon-hand-up"></span>
 <span class="glyphicon glyphicon-hand-down"></span>
+<% if current_user %>
+  <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), favorite_path %></span>
+  <span><%= @image.favorites.count %></span>
+<% end %>
 
 <% if user_signed_in? %>
 
@@ -20,9 +24,7 @@
 
 <% end %>
 
-<% if current_user %>
-  <%= link_to 'Favorite', favorite_path %>
-<% end %>
+
 
 
 
