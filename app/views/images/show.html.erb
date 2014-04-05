@@ -6,13 +6,15 @@
 
 <span class="glyphicon glyphicon-hand-down"></span>
 <% if current_user %>
-  <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), favorite_path %></span>
-  <span><%= @image.favorites.count %></span>
+  <% if !@image.favorites.where(user_id: current_user.id).empty? %>
+    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart"), favorite_path %></span>
+  <% else %>
+    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), favorite_path %></span>
+  <% end %>
+  <span>Fav Count:<%= @image.favorites.count %></span>
 <% end %>
 
-
-<span class="glyphicon glyphicon-hand-up"></span>
-<p><%= @num_positive_votes %></p>
+<p>Vote Count: <%= @num_positive_votes %></p>
 
 
 <%= form_for(@vote, url: image_votes_path(@image.id)) do |f| %>
