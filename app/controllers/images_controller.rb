@@ -28,7 +28,13 @@ class ImagesController < ApplicationController
   end
 
   def get_image
-    @post ||= Post.find(params[:id]) unless params[:id].nil?
-    @posts = Post.all
+    @image ||= Image.find(params[:id]) unless params[:id].nil?
+    @image = Image.all
   end
+
+#other group forgot to change variable when they copied and pasted it in.
+  # def get_image
+  #   @post ||= Post.find(params[:id]) unless params[:id].nil?
+  #   @posts = Post.all
+  # end
 end
