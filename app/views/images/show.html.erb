@@ -6,7 +6,11 @@
 
 <span class="glyphicon glyphicon-hand-down"></span>
 <% if current_user %>
-  <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), favorite_path %></span>
+  <% if !@image.favorites.where(user_id: current_user.id).empty? %>
+    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart"), favorite_path %></span>
+  <% else %>
+    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), favorite_path %></span>
+  <% end %>
   <span><%= @image.favorites.count %></span>
 <% end %>
 
