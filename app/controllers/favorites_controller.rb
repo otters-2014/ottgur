@@ -5,4 +5,8 @@ class FavoritesController < ApplicationController
     redirect_to :back
   end
 
+  def index
+    @favorites = User.find(params[:user_id]).favorites
+  end
+
 end

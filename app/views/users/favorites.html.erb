@@ -1,6 +1,8 @@
-<% @user.favorites.each do |favorite| %>
-<% @image = Image.find(favorite.image_id) %>
-
-  <a href="images/<%=@image.id%>"><img src="<%= @image.submission.thumb.url %>"></a>
+<% if params[:user_id] %>
+<% User.find(params[:user_id].favorites each do |image| %>
+<%=  debug image %>
+  <img src="<%=image.thumb.url%>">
+  <% end %>
+<% else %>
 
 <% end %>
