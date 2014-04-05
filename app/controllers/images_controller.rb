@@ -12,9 +12,11 @@ class ImagesController < ApplicationController
   end
 
   def show
-    @user = current_user
+    # @user = current_user
+    @vote = Vote.new
     @image = Image.find(params[:id])
     @comments = Comment.where(image_id: @image.id)
+    @num_positive_votes = @image.votes.where(direction: true).count - @image.votes.where(direction: false).count
   end
 
   def index

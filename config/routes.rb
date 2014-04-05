@@ -5,6 +5,9 @@ Devise::Application.routes.draw do
   end
 
   root 'images#index'
+  resources :images do
+    resources :votes, only: [:create]
+  end
 
   get '/users/:id/favorites/:id', to: 'favorites#create', as: 'favorite'
 
@@ -12,16 +15,11 @@ Devise::Application.routes.draw do
     resources :favorites
   end
 
-  # patch '/images' to: "comments#create"
-
   resources :users, only: [:show, :update], shallow: true do
     resources :images, only: [:show, :create, :delete, :index], shallow: true do
       resources :comments, shallow: true
     end
   end
-
-
-  resources :images
 
   match 'hidden', to: 'static_pages#hidden', via: "get", as: "hidden"
 end
