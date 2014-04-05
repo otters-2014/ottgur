@@ -3,11 +3,29 @@
 <div class="col-sm-6 col-sm-offset-3">
 <p><img src="<%= @image.submission %>"></p>
 <span class="glyphicon glyphicon-hand-up"></span>
+
 <span class="glyphicon glyphicon-hand-down"></span>
 <% if current_user %>
   <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), favorite_path %></span>
   <span><%= @image.favorites.count %></span>
 <% end %>
+
+
+<span class="glyphicon glyphicon-hand-up"></span>
+<p><%= @num_positive_votes %></p>
+
+
+<%= form_for(@vote, url: image_votes_path(@image.id)) do |f| %>
+  <%= f.hidden_field :direction, :value => true %>
+  <%= f.submit "upvote" %>
+<% end %>
+<%= form_for(@vote, url: image_votes_path(@image.id)) do |f| %>
+  <%= f.hidden_field :direction, :value => false %>
+  <%= f.submit "downvote" %>
+<% end %>
+
+
+
 
 <% if user_signed_in? %>
 
