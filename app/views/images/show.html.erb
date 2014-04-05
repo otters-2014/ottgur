@@ -13,6 +13,9 @@
   <%= text_field "Add Comment", "#", class: "form-control form-inline", placeholder: "Comment here!" %>
   <button href="#"  data-toggle="modal" data-target="#upload" type="button" class= "btn btn-primary">Add Comment</button>
 <% end %>
+<% if current_user %>
+  <%= link_to 'Favorite', favorite_path %>
+<% end %>
 <% @comments.each do |comment| %>
   <p><%= comment.text %></p>
   <p>By: <%= comment.user.email %></p>
