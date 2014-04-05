@@ -1,3 +1,6 @@
+
+![Build Status](https://travis-ci.org/otters-2014/ottgur.svg?branch=master)](https://travis-ci.org/otters-2014/ottgur)
+
 [![Coverage Status](http://coveralls.io/repos/otters-2014/ottgur/badge.png)](http://coveralls.io/r/otters-2014/ottgur)
 
 [Ottgur Schema 1.0](http://marcmo.minus.com/i/b2nnUeuintv7C)  
