@@ -11,12 +11,10 @@
   <% else %>
     <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), favorite_path %></span>
   <% end %>
-  <span><%= @image.favorites.count %></span>
+  <span>Fav Count:<%= @image.favorites.count %></span>
 <% end %>
 
-
-<span class="glyphicon glyphicon-hand-up"></span>
-<p><%= @num_positive_votes %></p>
+<p>Vote Count: <%= @num_positive_votes %></p>
 
 
 <%= form_for(@vote, url: image_votes_path(@image.id)) do |f| %>
