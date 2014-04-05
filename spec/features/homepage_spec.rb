@@ -17,6 +17,13 @@ feature "the homepage" do
     end
   end
 
+  context "Ian and Marco only get better with age" do
+      it "Yep. They most certainly do" do
+        expect("duh" == "duh").to eq true
+      end
+  end
+
+
 
 end
 
