@@ -2,37 +2,28 @@
 <div class="row">
 <div class="col-sm-6 col-sm-offset-3">
 <p><img src="<%= @image.submission %>"></p>
-<span class="glyphicon glyphicon-hand-up"></span>
 
-<span class="glyphicon glyphicon-hand-down"></span>
 <% if current_user %>
   <% if !@image.favorites.where(user_id: current_user.id).empty? %>
-    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart"), favorite_path %></span>
+    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart"), image_favorites_path(@image), method: :post %></span>
   <% else %>
-    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), favorite_path %></span>
+    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), image_favorites_path(@image), method: :post %></span>
   <% end %>
-  <span>Fav Count:<%= @image.favorites.count %></span>
+  <span><%= @image.favorites.count %></span>
 <% end %>
 
-<p>Vote Count: <%= @num_positive_votes %></p>
 
-
-<%= form_for(@vote, url: image_votes_path(@image.id)) do |f| %>
-  <%= f.hidden_field :direction, :value => true %>
-  <%= f.submit "upvote" %>
-<% end %>
-<%= form_for(@vote, url: image_votes_path(@image.id)) do |f| %>
-  <%= f.hidden_field :direction, :value => false %>
-  <%= f.submit "downvote" %>
-<% end %>
+<%= link_to tag("span", class: "glyphicon glyphicon-hand-up"), image_votes_path(@image, :direction => true), method: :post %>
+<span><%= VotesController.score(@image) %></span>
+<%= link_to tag("span", class: "glyphicon glyphicon-hand-down"), image_votes_path(@image, :direction => false), method: :post %>
 
 
 
 
 <% if user_signed_in? %>
 
-<%= form_for([@image, @image.comments.build], :class => "form-inline") do |f| %>
-  <%= f.text_field :text, :placeholder => "comment here!", class: "form-control", :html => { :type =>  "text", :disabled => "true"} %>
+<%= form_for Comment.new, url: image_comments_path(@image) do |f| %>
+  <%= f.text_field :text, :placeholder => "comment here!", class: "form-control" %>
   <%= f.submit "Add Comment", class: "btn btn-primary" %>
   <% end %>
 
@@ -44,11 +35,7 @@
 
 <% end %>
 
-
-
-
-
-<% @comments.each do |comment| %>
+<% @image.comments.each do |comment| %>
   <p><%= comment.text %></p>
   <p>By: <%= comment.user.email %></p>
 <% end %>

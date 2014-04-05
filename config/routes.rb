@@ -9,11 +9,13 @@ Devise::Application.routes.draw do
     resources :votes, only: [:create]
   end
 
-  get '/users/:id/favorites/:id', to: 'favorites#create', as: 'favorite'
+  post "/images/:image_id/favorites", to: "favorites#create", as: "image_favorites"
 
   resources :users do
     resources :favorites
   end
+
+
 
   resources :users, only: [:show, :update], shallow: true do
     resources :images, only: [:show, :create, :delete, :index], shallow: true do
