@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe CommentsController do
   let(:image) { Image.create(id: 1) }
+  let (:comment) {Comment.create}
 
   describe 'POST #create' do
     it 'creates a new comment for an image' do
@@ -20,7 +21,9 @@ describe CommentsController do
   end
 
   it "reloads the page after submitting a comment" do
-    # # create an image
+    image = Image.new
+    visit '/'
+
     # go to the image show page
     # fill in comment
     # expect response to be image show page
