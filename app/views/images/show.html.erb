@@ -1,11 +1,21 @@
 <!-- Image(id: integer, filename: string, thumb_filename: string, user_id: integer, caption: text, created_at: datetime, updated_at: datetime, submission: string) -->
-
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">
 <p><img src="<%= @image.submission %>"></p>
-<%= form_for([@image, @image.comments.build]) do |f| %>
-  <%= f.text_field :text, :placeholder => "comment here!" %>
-  <%= f.submit "add comment" %>
+<span class="glyphicon glyphicon-hand-up"></span>
+<span class="glyphicon glyphicon-hand-up"></span>
+<% if user_signed_in? %>
+<%= form_for([@image, @image.comments.build], :class => "form-inline") do |f| %>
+  <%= f.text_field :text, :placeholder => "comment here!", class: "form-control", :html => { :type =>  "text", :disabled => "true"} %>
+  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+  <% end %>
+  <% else %>
+  <%= text_field "Add Comment", "#", class: "form-control form-inline", placeholder: "Comment here!" %>
+  <button href="#"  data-toggle="modal" data-target="#upload" type="button" class= "btn btn-primary">Add Comment</button>
 <% end %>
 <% @comments.each do |comment| %>
   <p><%= comment.text %></p>
-  <p><%= comment.user.email %></p>
+  <p>By: <%= comment.user.email %></p>
 <% end %>
+</div>
+</div>
