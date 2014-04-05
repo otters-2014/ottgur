@@ -1,0 +1,6 @@
+<% @user.favorites.each do |favorite| %>
+<% @image = Image.find(favorite.image_id) %>
+
+  <a href="images/<%=@image.id%>"><img src="<%= @image.submission.thumb.url %>"></a>
+
+<% end %>
