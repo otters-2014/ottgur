@@ -33,6 +33,15 @@ gem 'jbuilder', '~> 1.2'
 
 gem "bootstrap-sass"
 
+
+#Must run ruby racer BEFORE less-rails-bootstrap
+gem 'therubyracer'
+
+#Had to add less for glyphonts (sp?)
+gem 'less-rails-bootstrap', '~> 3.1.1.1'
+
+
+
 gem "mini_magick"
 
 #add for Heroku per docs

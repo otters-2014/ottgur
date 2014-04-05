@@ -3,22 +3,33 @@
 <div class="col-sm-6 col-sm-offset-3">
 <p><img src="<%= @image.submission %>"></p>
 <span class="glyphicon glyphicon-hand-up"></span>
-<span class="glyphicon glyphicon-hand-up"></span>
+<span class="glyphicon glyphicon-hand-down"></span>
+
 <% if user_signed_in? %>
+
 <%= form_for([@image, @image.comments.build], :class => "form-inline") do |f| %>
   <%= f.text_field :text, :placeholder => "comment here!", class: "form-control", :html => { :type =>  "text", :disabled => "true"} %>
   <%= f.submit "Add Comment", class: "btn btn-primary" %>
   <% end %>
+
   <% else %>
+<!-- Create fake text field for non-users -->
   <%= text_field "Add Comment", "#", class: "form-control form-inline", placeholder: "Comment here!" %>
+<!-- Using bootstrap  -->
   <button href="#"  data-toggle="modal" data-target="#upload" type="button" class= "btn btn-primary">Add Comment</button>
+
 <% end %>
+
 <% if current_user %>
   <%= link_to 'Favorite', favorite_path %>
 <% end %>
+
+
+
 <% @comments.each do |comment| %>
   <p><%= comment.text %></p>
   <p>By: <%= comment.user.email %></p>
 <% end %>
-</div>
+
+  </div>
 </div>
