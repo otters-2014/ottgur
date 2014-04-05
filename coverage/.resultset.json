@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/8otter/9otter/app/models/user.rb": [
+      "/Users/apprentice/Desktop/9otter/app/models/user.rb": [
         1,
         1,
         1,
@@ -15,15 +15,15 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/helpers/application_helper.rb": [
+      "/Users/apprentice/Desktop/9otter/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/helpers/images_helper.rb": [
+      "/Users/apprentice/Desktop/9otter/app/helpers/images_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/helpers/static_pages_helper.rb": [
+      "/Users/apprentice/Desktop/9otter/app/helpers/static_pages_helper.rb": [
         1,
         null,
         1,
@@ -40,7 +40,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/helpers/users_helper.rb": [
+      "/Users/apprentice/Desktop/9otter/app/helpers/users_helper.rb": [
         1,
         null,
         1,
@@ -57,29 +57,29 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/helpers/votes_helper.rb": [
+      "/Users/apprentice/Desktop/9otter/app/helpers/votes_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/controllers/comments_controller.rb": [
+      "/Users/apprentice/Desktop/9otter/app/controllers/comments_controller.rb": [
         1,
         null,
         1,
-        1,
+        0,
         null,
         null,
-        1,
+        0,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/controllers/application_controller.rb": [
+      "/Users/apprentice/Desktop/9otter/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/controllers/images_controller.rb": [
+      "/Users/apprentice/Desktop/9otter/app/controllers/images_controller.rb": [
         1,
         1,
         null,
@@ -106,12 +106,12 @@
         null,
         null,
         1,
-        10,
-        10,
+        9,
+        9,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/controllers/users_controller.rb": [
+      "/Users/apprentice/Desktop/9otter/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -124,21 +124,6 @@
         null,
         null,
         1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/controllers/votes_controller.rb": [
-        1,
-        null,
-        1,
-        0,
         0,
         0,
         null,
@@ -149,7 +134,22 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/models/comment.rb": [
+      "/Users/apprentice/Desktop/9otter/app/controllers/votes_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/9otter/app/models/comment.rb": [
         1,
         1,
         null,
@@ -157,7 +157,7 @@
         1,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/models/favorite.rb": [
+      "/Users/apprentice/Desktop/9otter/app/models/favorite.rb": [
         1,
         1,
         1,
@@ -168,7 +168,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/models/image.rb": [
+      "/Users/apprentice/Desktop/9otter/app/models/image.rb": [
         1,
         1,
         1,
@@ -178,7 +178,7 @@
         1,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/uploaders/submission_uploader.rb": [
+      "/Users/apprentice/Desktop/9otter/app/uploaders/submission_uploader.rb": [
         null,
         null,
         1,
@@ -231,13 +231,13 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/8otter/9otter/app/models/vote.rb": [
+      "/Users/apprentice/Desktop/9otter/app/models/vote.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1396732480
+    "timestamp": 1396735720
   }
 }
