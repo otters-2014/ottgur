@@ -11,10 +11,36 @@
   border-radius: 5px;
 }
 
+li {
+  color: #4e5d6c;
+}
+
 li.comment, li.reply {
   list-style: none;
 }
 
+button#fake-add,
+#new_comment input[type='submit'] {
+  margin: 20px 0;
+  font-weight: 600;
+}
+
 #reply_comment {
   display: none;
+}
+
+.reply {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  color: white;
+}
+/* odd replies */
+.reply:first-child, .reply:nth-child(1n+2) {
+  background-color: #f0ad4e;
+}
+
+/* even replies */
+.reply:nth-child(2n+2) {
+  background-color: #ba5816;
 }

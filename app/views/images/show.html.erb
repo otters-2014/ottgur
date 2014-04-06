@@ -32,7 +32,7 @@
 <!-- Create fake text field for non-users -->
   <%= text_field "Add Comment", "#", class: "form-control form-inline", placeholder: "Comment here!" %>
 <!-- Using bootstrap  -->
-  <button href="#"  data-toggle="modal" data-target="#upload" type="button" class= "btn btn-primary">Add Comment</button>
+  <button href="#"  data-toggle="modal" data-target="#upload" type="button" id="fake-add" class="btn btn-primary">Add Comment</button>
 
 <% end %>
 <!-- start of comments beahvior -->
@@ -49,9 +49,9 @@
           <%= form_for Comment.new, url: image_comments_path(@image), html: { id: "reply_comment" } do |f| %>
             <%= f.hidden_field :comment_id, value: comment.id %>
             <%= f.text_field :text, :placeholder => "comment here!", class: "form-control" %>
-            <%= f.submit "Reply", class: "btn btn-primary" %>
+            <%= f.submit "Reply", class: "btn btn-primary btn-sm" %>
           <% end %> <!-- end form -->
-          <a id="reply-trigger" href="#">Reply Trigger</a>
+          <a class="reply-trigger" href="#">Reply</a>
       <% end %> <!-- end if -->
     </ul>
   <% end %> <!-- end comment -->
