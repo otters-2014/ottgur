@@ -22,7 +22,7 @@
 <% end %>
 
   <div id="votes">
-    <% if current_user && @image.votes.find_by(:user_id => current_user.id) %> 
+    <% if current_user && @image.votes.find_by(:user_id => current_user.id) %>
       <% user_vote = @image.votes.find_by("user_id = ?", current_user.id) %>
       <% if user_vote.direction == true %>
         <span id="upvote"><%= link_to tag("span", id: "up", class: "glyphicon glyphicon-hand-up")%></span>
@@ -86,7 +86,7 @@
               <%= reply.text %>
               <small class="author"><%= comment.user.email %></small>
             </li>
-          <% end %> 
+          <% end %>
 <!-- end replies -->
         </ul>
 <!-- begin reply form -->

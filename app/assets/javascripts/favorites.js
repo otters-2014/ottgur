@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $("#empty-heart").on("click", function(event){
     event.preventDefault();
     $.ajax({
@@ -8,7 +9,7 @@ $(document).ready(function(){
         $("#empty-heart").html("")
         $("#empty-heart").addClass("glyphicon glyphicon-heart")
         $("#fav-count").html(favCount + 1)
-      }    
+      }
     });
   });
 });
