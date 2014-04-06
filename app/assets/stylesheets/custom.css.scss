@@ -3,12 +3,16 @@
   margin: 100px auto;
 }
 
-#comments ul {
+/*#comments ul {
   margin: 0;
   padding: 10px;
   margin-bottom: 10px;
   background-color: #eee;
   border-radius: 5px;
+}*/
+
+blockquote {
+  padding: 0 10px;
 }
 
 li {
@@ -25,24 +29,36 @@ button#fake-add,
   font-weight: 600;
 }
 
+.replies {
+  padding: 0;
+}
+
+.replies li:first-child {
+  margin-top: 10px;
+}
+
 #reply_comment {
   display: none;
 }
 
 .reply {
-  padding: 5px;
-  border-radius: 5px;
+  padding: 5px 10px;
   margin-bottom: 5px;
-  color: white;
+  font-size: .9em;
 }
+
 /* odd replies */
-.reply:first-child, .reply:nth-child(1n+2) {
+.reply:first-of-type, .reply:nth-child(1n+2) {
   background-color: #f0ad4e;
+  color: #2b3e50;
+  font-weight: 400;
 }
 
 /* even replies */
 .reply:nth-child(2n+2) {
   background-color: #ba5816;
+  color: white;
+  font-weight: 300;
 }
 
 .navbar-right .dropdown-menu {
@@ -56,4 +72,20 @@ input.form-control {
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   background-color: #5bc0de;
+}
+
+.author {
+  text-align: right;
+}
+
+.reply .author {
+  float: right;
+}
+
+blockquote .reply small:before {
+  content: none;
+}
+
+blockquote small {
+  color: inherit;
 }
