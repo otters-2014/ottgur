@@ -3,16 +3,22 @@
   margin: 100px auto;
 }
 
-/*#comments ul {
-  margin: 0;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #eee;
-  border-radius: 5px;
-}*/
+.show-image {
+  width: 100%;
+  margin: 10px auto;
+  border: 4px solid white;
+}
+
+#favs-n-votes {
+  font-size: 2em;
+}
+
+#votes {
+  float: right;
+}
 
 blockquote {
-  padding: 0 10px;
+  padding: 0 0 0 10px;
 }
 
 li {
@@ -25,7 +31,7 @@ li.comment, li.reply {
 
 button#fake-add,
 #new_comment input[type='submit'] {
-  margin: 20px 0;
+  margin: 10px 0 20px;
   font-weight: 600;
 }
 
@@ -44,6 +50,7 @@ button#fake-add,
 .reply {
   padding: 5px 10px;
   margin-bottom: 5px;
+  margin-left: 15px;
   font-size: .9em;
 }
 

@@ -1,66 +1,88 @@
 <!-- Image(id: integer, filename: string, thumb_filename: string, user_id: integer, caption: text, created_at: datetime, updated_at: datetime, submission: string) -->
 <div class="row">
 <div class="col-sm-6 col-sm-offset-3">
-<p><img src="<%= @image.submission %>"></p>
 
-<% if current_user %>
-  <% if !@image.favorites.where(user_id: current_user.id).empty? %>
-    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart"), image_favorites_path(@image), method: :post %></span>
-  <% else %>
-    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), image_favorites_path(@image), method: :post %></span>
+<div id="favs-n-votes">
+  <% if current_user %>
+    <% if !@image.favorites.where(user_id: current_user.id).empty? %>
+      <span><%= link_to tag("span", class: "glyphicon glyphicon-heart"), image_favorites_path(@image), method: :post %></span>
+    <% else %>
+      <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), image_favorites_path(@image), method: :post %></span>
+    <% end %>
+    <span><%= @image.favorites.count %></span>
   <% end %>
-  <span><%= @image.favorites.count %></span>
-<% end %>
+  <div id="votes">
+    <%= link_to tag("span", class: "glyphicon glyphicon-hand-up"), image_votes_path(@image, :direction => true), method: :post %>
+    <span><%= VotesController.score(@image) %></span>
+    <%= link_to tag("span", class: "glyphicon glyphicon-hand-down"), image_votes_path(@image, :direction => false), method: :post %>
+  </div>
+</div>
 
 
-<%= link_to tag("span", class: "glyphicon glyphicon-hand-up"), image_votes_path(@image, :direction => true), method: :post %>
-<span><%= VotesController.score(@image) %></span>
-<%= link_to tag("span", class: "glyphicon glyphicon-hand-down"), image_votes_path(@image, :direction => false), method: :post %>
 
-
-
+<img class="show-image" src="<%= @image.submission %>">
 
 <% if user_signed_in? %>
-
-<%= form_for Comment.new, url: image_comments_path(@image) do |f| %>
-  <%= f.text_field :text, :placeholder => "comment here!", class: "form-control" %>
-  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+<!-- Start comment form -->
+  <%= form_for Comment.new, url: image_comments_path(@image) do |f| %>
+    <div class="input-group">
+    <%= f.text_field :text, :placeholder => "comment here!", class: "form-control" %>
+    <span class="input-group-btn">
+      <%= f.submit "Add Comment", class: "btn btn-primary" %>
+    </span>
+  </div>
   <% end %>
+<!-- End comment form -->
 
+<!-- <div class="form-group">
+  <label class="control-label">Input addons</label>
+  <div class="input-group">
+    <span class="input-group-addon">$</span>
+    <input type="text" class="form-control">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button">Button</button>
+    </span>
+  </div>
+</div> -->
 
-  <% else %>
-<!-- Create fake text field for non-users -->
+<% else %>
+  <!-- Create fake text field for non-users -->
   <%= text_field "Add Comment", "#", class: "form-control form-inline", placeholder: "Comment here!" %>
-<!-- Using bootstrap  -->
+  <!-- Using bootstrap  -->
   <button href="#"  data-toggle="modal" data-target="#upload" type="button" id="fake-add" class="btn btn-primary">Add Comment</button>
-
 <% end %>
-<!-- start of comments beahvior -->
+
+<!-- start of comments -->
 <div id="comments">
   <% @image.comments.each do |comment| %>
+<!-- Check if a comment is not a reply -->
     <% if comment.comment_id.nil? %>
       <blockquote class="comment">
         <p>&ldquo;<%= comment.text %>&rdquo;</p>
         <small class="author"><%= comment.user.email %></small>
+<!-- start replies -->
         <ul class="replies">
           <% comment.replies.each do |reply| %>
             <li class="reply">
               <%= reply.text %>
               <small class="author"><%= comment.user.email %></small>
             </li>
-          <% end %> <!-- end replies -->
+          <% end %> 
+<!-- end replies -->
         </ul>
+<!-- begin reply form -->
         <% if !@image.comments.empty? %>
             <%= form_for Comment.new, url: image_comments_path(@image), html: { id: "reply_comment" } do |f| %>
               <%= f.hidden_field :comment_id, value: comment.id %>
               <%= f.text_field :text, :placeholder => "comment here!", class: "form-control" %>
-              <%= f.submit "Reply", class: "btn btn-primary btn-sm" %>
-            <% end %> <!-- end form -->
-            <a class="reply-trigger" href="#">Reply</a>
-        <% end %> <!-- end if -->
+              <%= f.submit "Reply", class: "btn btn-primary btn-md" %>
+            <% end %>
+            <a class="reply-trigger">Reply</a>
+        <% end %>
+<!-- end reply form -->
       </blockquote>
-    <% end %> <!-- end if nil -->  
-  <% end %> <!-- end comment -->
+    <% end %>
+  <% end %>
 </div>
 <!-- #end of comments -->
 
