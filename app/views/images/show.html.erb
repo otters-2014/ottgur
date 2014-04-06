@@ -38,22 +38,24 @@
 <!-- start of comments beahvior -->
 <div id="comments">
   <% @image.comments.each do |comment| %>
-    <ul>
-      <li class="comment"><%= comment.text %> | By: <%= comment.user.email %></li>
-      <ul class="replies">
-        <% comment.replies.each do |reply| %>
-          <li class="reply"><%= reply.text %> | By: <%= comment.user.email %></li>
-        <% end %> <!-- end replies -->
+    <% if comment.comment_id.nil? %>
+      <ul>
+        <li class="comment"><%= comment.text %> | By: <%= comment.user.email %></li>
+        <ul class="replies">
+          <% comment.replies.each do |reply| %>
+            <li class="reply"><%= reply.text %> | By: <%= comment.user.email %></li>
+          <% end %> <!-- end replies -->
+        </ul>
+        <% if !@image.comments.empty? %>
+            <%= form_for Comment.new, url: image_comments_path(@image), html: { id: "reply_comment" } do |f| %>
+              <%= f.hidden_field :comment_id, value: comment.id %>
+              <%= f.text_field :text, :placeholder => "comment here!", class: "form-control" %>
+              <%= f.submit "Reply", class: "btn btn-primary btn-sm" %>
+            <% end %> <!-- end form -->
+            <a class="reply-trigger" href="#">Reply</a>
+        <% end %> <!-- end if -->
       </ul>
-      <% if !@image.comments.empty? %>
-          <%= form_for Comment.new, url: image_comments_path(@image), html: { id: "reply_comment" } do |f| %>
-            <%= f.hidden_field :comment_id, value: comment.id %>
-            <%= f.text_field :text, :placeholder => "comment here!", class: "form-control" %>
-            <%= f.submit "Reply", class: "btn btn-primary btn-sm" %>
-          <% end %> <!-- end form -->
-          <a class="reply-trigger" href="#">Reply</a>
-      <% end %> <!-- end if -->
-    </ul>
+    <% end %> <!-- end if nil -->  
   <% end %> <!-- end comment -->
 </div>
 <!-- #end of comments -->
