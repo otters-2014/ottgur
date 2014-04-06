@@ -14,12 +14,14 @@
 <%= javascript_tag do %>
   imageId = <%= @image.id %>
   favCount = <%= @image.favorites.count %>
+  userId = <%= current_user.id %>
+  imageScore = <%= VotesController.score(@image) %>
 <% end %>
 
 
-<%= link_to tag("span", class: "glyphicon glyphicon-hand-up"), image_votes_path(@image, :direction => true), method: :post %>
-<span><%= VotesController.score(@image) %></span>
-<%= link_to tag("span", class: "glyphicon glyphicon-hand-down"), image_votes_path(@image, :direction => false), method: :post %>
+<span id="upvote"><%= link_to tag("span", class: "glyphicon glyphicon-hand-up")%></span>
+  <span id="image-score"><%= VotesController.score(@image) %></span>
+<span id="downvote"><%= link_to tag("span", class: "glyphicon glyphicon-hand-down")%></span>
 
 
 
@@ -68,13 +70,6 @@
 
   </div>
 </div>
-
-<script type="text/javascript">
-
-</script>
-
-<!-- , image_favorites_path(@image), method: :post  -->
-
 
 
 

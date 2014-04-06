@@ -28,4 +28,31 @@
 //= require bootstrap/tooltip
 //= require bootstrap/popover
 
+$(document).ready(function() {
+  $("#upvote").on("click", function(event) {
+    event.preventDefault();
+    // alert("hi")
+    $.ajax({
+      url: "/images/" + imageId + "/votes",
+      type: "post",
+      data: {"image_id": imageId, "user_id": userId, "direction": true},
+      success: function() {
+        $("#image-score").html(imageScore + 1);
+      }
+    });
+  });
+  $("#downvote").on("click", function(event) {
+    event.preventDefault();
+    // alert("hi")
+    $.ajax({
+      url: "/images/" + imageId + "/votes",
+      type: "post",
+      data: {"image_id": imageId, "user_id": userId, "direction": false},
+      success: function() {
+        $("#image-score").html(imageScore - 1);
+      }
+    });
+  });
+});
+
 
