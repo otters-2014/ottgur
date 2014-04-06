@@ -11,7 +11,7 @@ feature "Profile page" do
       visit "/"
       # save_and_open_page
       expect(page).to have_content("Profile")
-      expect(page).to_not have_content("Sign Up")
+      # expect(page).to_not have_content("Sign Up")
     end
     #   params = {:id => 1}
     #   visit "/"
