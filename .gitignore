@@ -16,6 +16,7 @@
 /tmp
 
 /uploads
+/coverage
 
 
 # Ignore local image uploads
