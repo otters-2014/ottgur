@@ -44,3 +44,16 @@ button#fake-add,
 .reply:nth-child(2n+2) {
   background-color: #ba5816;
 }
+
+.navbar-right .dropdown-menu {
+  background-color: #5bc0de;
+  padding:10px;
+}
+
+input.form-control {
+  margin: 10px 0;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #5bc0de;
+}
