@@ -4,6 +4,8 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new
     @image.submission = params[:path]
+    @image.user_id = current_user.id
+    @image.caption = params[:caption]
     @image.save!
     redirect_to root_path
   end
@@ -15,6 +17,11 @@ class ImagesController < ApplicationController
   end
 
   def index
+    if params[:user_id]
+      @images = User.find(params[:user_id]).images
+    else
+      @images = Image.all
+    end
   end
 
   private
@@ -25,6 +32,5 @@ class ImagesController < ApplicationController
 
   def get_image
     @image ||= Image.find(params[:id]) unless params[:id].nil?
-    @images = Image.all
   end
 end

@@ -11,6 +11,7 @@ Devise::Application.routes.draw do
 
   get '/users/:user_id', to: redirect('/users/%{user_id}/favorites')
   post "/images/:image_id/favorites", to: "favorites#create", as: "image_favorites"
+  get "/users/:user_id/comments", to: "comments#index", as: "user_comments"
 
   resources :users do
     resources :favorites

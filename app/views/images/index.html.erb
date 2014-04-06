@@ -1,6 +1,10 @@
 
+
+<% if params[:user_id] %>
+  <%= render "users/users_menu" %>
+  <h3>Uploads</h3>
+<% end %>
+
 <% @images.each do |image| %>
-
-  <a href="images/<%=image.id%>"><img src="<%=image.submission.thumb.url %>"></a>
-
+<%= link_to tag('img', src: image.submission.thumb.url), image %>
 <% end %>

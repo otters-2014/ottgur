@@ -1,0 +1,8 @@
+<%= render "users/users_menu" %>
+
+<h3>Comments</h3>
+<ul>
+<% @comments.each do |comment| %>
+  <li><%= link_to image_tag(Image.find(comment.image_id).submission.thumb.url), Image.find(comment.image_id) %><%= comment.text %></li>
+  <% end %>
+</ul>
