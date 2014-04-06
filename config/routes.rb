@@ -9,7 +9,7 @@ Devise::Application.routes.draw do
     resources :votes, only: [:create]
   end
 
-  get '/users/:user_id', to: redirect('/users/%{user_id}/favorites')
+  get '/users/:user_id', to: redirect('/users/%{user_id}/favorites'), as: "user_favorites"
   post "/images/:image_id/favorites", to: "favorites#create", as: "image_favorites"
   get "/users/:user_id/comments", to: "comments#index", as: "user_comments"
 
