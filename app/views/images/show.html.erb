@@ -11,10 +11,22 @@
     <% end %>
     <span><%= @image.favorites.count %></span>
   <% end %>
+
   <div id="votes">
-    <%= link_to tag("span", class: "glyphicon glyphicon-hand-up"), image_votes_path(@image, :direction => true), method: :post %>
+    <% if @image.votes.where("user_id = ?", current_user.id).empty? %>
+      <%= link_to tag("span", class: "glyphicon glyphicon-hand-up grey" ), image_votes_path(@image, :direction => true), method: :post %>
+      <%= link_to tag("span", class: "glyphicon glyphicon-hand-down grey"), image_votes_path(@image, :direction => false), method: :post %>
+    <% else %>
+      <% if @image.votes.where("direction = ?", true).nil? %>
+          <%= link_to tag("span", class: "glyphicon glyphicon-hand-up" ), image_votes_path(@image, :direction => true), method: :post %>
+          <%= link_to tag("span", class: "glyphicon glyphicon-hand-down grey"), image_votes_path(@image, :direction => false), method: :post %>
+      <% else %> 
+        <%= link_to tag("span", class: "glyphicon glyphicon-hand-up grey" ), image_votes_path(@image, :direction => true), method: :post %>
+        <%= link_to tag("span", class: "glyphicon glyphicon-hand-down"), image_votes_path(@image, :direction => false), method: :post %>
+      <% end %>
+    <% end %>
+
     <span><%= VotesController.score(@image) %></span>
-    <%= link_to tag("span", class: "glyphicon glyphicon-hand-down"), image_votes_path(@image, :direction => false), method: :post %>
   </div>
 </div>
 
