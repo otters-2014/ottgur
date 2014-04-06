@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
   def create
     favorite = Favorite.find_or_create_by(image_id: params[:image_id], user_id: current_user.id)
-    render git
+    render json: nil
   end
 
   def index
