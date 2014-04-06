@@ -19,5 +19,5 @@ describe Image do
   end
   it "should have a caption" do
     expect(image.caption).to eq("Here is my cute pet otter.")
-  endgit
+  end
 end
