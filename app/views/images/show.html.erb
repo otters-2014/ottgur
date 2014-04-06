@@ -10,16 +10,20 @@
       <span id="empty-heart"><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty")%></span>
     <% end %>
     <span id="fav-count"><%= @image.favorites.count %></span>
+  <% else %>
+    <span class="glyphicon glyphicon-heart-empty"></span>
+    <span id="fav-count"><%= @image.favorites.count %></span>
   <% end %>
   <%= javascript_tag do %>
   imageId = <%= @image.id %>
   favCount = <%= @image.favorites.count %>
-  userId = <%= current_user.id %>
+  userId = <%= current_user ? current_user.id : nil%>
   imageScore = <%= VotesController.score(@image) %>
 <% end %>
 
   <div id="votes">
-    <% if user_vote = @image.votes.find_by("user_id = ?", current_user.id) %>
+    <% if current_user && @image.votes.find_by(:user_id => current_user.id) %> 
+      <% user_vote = @image.votes.find_by("user_id = ?", current_user.id) %>
       <% if user_vote.direction == true %>
         <span id="upvote"><%= link_to tag("span", id: "up", class: "glyphicon glyphicon-hand-up")%></span>
         <span id="downvote"><%= link_to tag("span", id: "down", class: "glyphicon glyphicon-hand-down grey")%></span>
