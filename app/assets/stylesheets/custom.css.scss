@@ -3,13 +3,44 @@
   margin: 100px auto;
 }
 
-/*@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
-}*/
+#comments ul {
+  margin: 0;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+}
 
-/* custom css is compiling*/
-/*body {
-  background-color: pink;
-}*/
+li {
+  color: #4e5d6c;
+}
+
+li.comment, li.reply {
+  list-style: none;
+}
+
+button#fake-add,
+#new_comment input[type='submit'] {
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+#reply_comment {
+  display: none;
+}
+
+.reply {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  color: white;
+}
+/* odd replies */
+.reply:first-child, .reply:nth-child(1n+2) {
+  background-color: #f0ad4e;
+}
+
+/* even replies */
+.reply:nth-child(2n+2) {
+  background-color: #ba5816;
+}
