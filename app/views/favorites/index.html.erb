@@ -1,3 +1,6 @@
+<%= render "users/users_menu" %>
+
+<h3>Favorited Photos</h3>
 <% @favorites.each do |favorite| %>
   <%= link_to image_tag(favorite.get_image.submission.thumb.url), favorite.get_image %>
   <% end %>

@@ -65,11 +65,9 @@
       </div>
     </div>
 
-  <div class="content">
-
-
-
-    <%= yield %>
+    <div class="content">
+      <%=  yield %>
+    </div>
 
     <% if !user_signed_in? %>
     <%= render 'layouts/signin_signup_modal' %>
@@ -77,6 +75,5 @@
     <%= render '/images/upload_modal' %>
     <% end %>
 
-</div>
 </body>
 </html>
