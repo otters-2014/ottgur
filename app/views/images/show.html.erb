@@ -27,6 +27,7 @@
   <%= f.submit "Add Comment", class: "btn btn-primary" %>
   <% end %>
 
+
   <% else %>
 <!-- Create fake text field for non-users -->
   <%= text_field "Add Comment", "#", class: "form-control form-inline", placeholder: "Comment here!" %>
@@ -34,11 +35,30 @@
   <button href="#"  data-toggle="modal" data-target="#upload" type="button" class= "btn btn-primary">Add Comment</button>
 
 <% end %>
+<!-- start of comments beahvior -->
+<div id="comments">
+  <% @image.comments.each do |comment| %>
+    <ul>
+      <li class="comment"><%= comment.text %> | By: <%= comment.user.email %></li>
+      <ul class="replies">
+        <% comment.replies.each do |reply| %>
+          <li class="reply"><%= reply.text %> | By: <%= comment.user.email %></li>
+        <% end %> <!-- end replies -->
+      </ul>
+      <% if !@image.comments.empty? %>
+          <%= form_for Comment.new, url: image_comments_path(@image), html: { id: "reply_comment" } do |f| %>
+            <%= f.hidden_field :comment_id, value: comment.id %>
+            <%= f.text_field :text, :placeholder => "comment here!", class: "form-control" %>
+            <%= f.submit "Reply", class: "btn btn-primary" %>
+          <% end %> <!-- end form -->
+          <a id="reply-trigger" href="#">Reply Trigger</a>
+      <% end %> <!-- end if -->
+    </ul>
+  <% end %> <!-- end comment -->
+</div>
+<!-- #end of comments -->
 
-<% @image.comments.each do |comment| %>
-  <p><%= comment.text %></p>
-  <p>By: <%= comment.user.email %></p>
-<% end %>
+
 
   </div>
 </div>
