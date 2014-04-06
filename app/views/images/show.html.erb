@@ -5,11 +5,15 @@
 
 <% if current_user %>
   <% if !@image.favorites.where(user_id: current_user.id).empty? %>
-    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart"), image_favorites_path(@image), method: :post %></span>
+    <span class="glyphicon glyphicon-heart"></span>
   <% else %>
-    <span><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty"), image_favorites_path(@image), method: :post %></span>
+    <span id="empty-heart"><%= link_to tag("span", class: "glyphicon glyphicon-heart-empty")%></span>
   <% end %>
-  <span><%= @image.favorites.count %></span>
+  <span id="fav-count"><%= @image.favorites.count %></span>
+<% end %>
+<%= javascript_tag do %>
+  imageId = <%= @image.id %>
+  favCount = <%= @image.favorites.count %>
 <% end %>
 
 
@@ -64,3 +68,22 @@
 
   </div>
 </div>
+
+<script type="text/javascript">
+
+</script>
+
+<!-- , image_favorites_path(@image), method: :post  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
