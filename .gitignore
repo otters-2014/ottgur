@@ -15,8 +15,8 @@
 /log/*.log
 /tmp
 
-/uploads
-/coverage
+/uploads/*
+/coverage/*
 
 
 # Ignore local image uploads

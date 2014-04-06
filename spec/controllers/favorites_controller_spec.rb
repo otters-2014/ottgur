@@ -6,25 +6,25 @@ describe FavoritesController do
     request.env["HTTP_REFERER"] = "where_i_came_from"
   end
 
-  let(:user) { User.new(:id=>3)}
-  let(:favorite) { Favorite.new }
-
   describe "#create" do
-    it "should create or find a favorite for an associated user and photo" do
+  let(:favorite) { Favorite.new }
+  let(:params) { {image_id: "2"} }
+    it "should create or find a favorite for an associated photo" do
       Favorite.should_receive(:find_or_create_by).with(params).and_return(favorite)
-      # Favorite.should_receive(:find_or_create_by).with({user.id => "3"}).and_return(favorite)
-      post :create, {image_id: "2"}
+      post :create, params
     end
-    # it "should create or find a favorite for an associated user" do
-    #   # Favorite.should_receive(:find_or_create_by).with(params).and_return(favorite)
-    #   Favorite.should_receive(:find_or_create_by).with(user.id).and_return(favorite)
-    #   post :create, params
-    # end
+
   end
-    # describe "#index" do
-    #   it "should return a given users favorites" do
-    #   User.should_receive(:find)
-    #   post(:index, params)
-    # end
-  # end
+
+  describe "#index" do
+    let(:user) { User.new}
+    let(:favorites) { [Favorite.new, Favorite.new]}
+    let(:params) { {user_id: "2"} }
+
+    it "should return a user's favorites" do
+      User.should_receive(:find).with(params[:user_id]).and_return(user)
+      user.should_receive(:favorites)
+      post :index, params
+    end
+  end
 end
