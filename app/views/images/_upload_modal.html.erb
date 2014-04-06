@@ -8,7 +8,7 @@
       <div class="modal-body">
         <%= form_tag(images_path, method: "post", multipart: true) do %>
         <%= file_field_tag(:path) %>
-        <%= text_field_tag(:caption, "caption") %>
+        <%= text_field_tag(:caption, nil, placeholder: "enter caption") %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -18,3 +18,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(#caption).on('focus', function() {
+    $(this).attr('placeholder', '');
+  })
+</script>
