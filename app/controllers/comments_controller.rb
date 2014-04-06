@@ -7,4 +7,8 @@ class CommentsController < ApplicationController
                     :comment_id => params[:comment][:comment_id])
     redirect_to :back
   end
+
+  def index
+    @comments = User.find(params[:user_id]).comments.reverse
+  end
 end
