@@ -39,11 +39,15 @@
 <div id="comments">
   <% @image.comments.each do |comment| %>
     <% if comment.comment_id.nil? %>
-      <ul>
-        <li class="comment"><%= comment.text %> | By: <%= comment.user.email %></li>
+      <blockquote class="comment">
+        <p>&ldquo;<%= comment.text %>&rdquo;</p>
+        <small class="author"><%= comment.user.email %></small>
         <ul class="replies">
           <% comment.replies.each do |reply| %>
-            <li class="reply"><%= reply.text %> | By: <%= comment.user.email %></li>
+            <li class="reply">
+              <%= reply.text %>
+              <small class="author"><%= comment.user.email %></small>
+            </li>
           <% end %> <!-- end replies -->
         </ul>
         <% if !@image.comments.empty? %>
@@ -54,7 +58,7 @@
             <% end %> <!-- end form -->
             <a class="reply-trigger" href="#">Reply</a>
         <% end %> <!-- end if -->
-      </ul>
+      </blockquote>
     <% end %> <!-- end if nil -->  
   <% end %> <!-- end comment -->
 </div>
