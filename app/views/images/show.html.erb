@@ -21,17 +21,17 @@
   <div id="votes">
     <% if user_vote = @image.votes.find_by("user_id = ?", current_user.id) %>
       <% if user_vote.direction == true %>
-        <%= link_to tag("span", class: "glyphicon glyphicon-hand-up"), image_votes_path(@image, :direction => true), method: :post %>
-        <%= link_to tag("span", class: "glyphicon glyphicon-hand-down grey"), image_votes_path(@image, :direction => false), method: :post %>
+        <span id="upvote"><%= link_to tag("span", id: "up", class: "glyphicon glyphicon-hand-up")%></span>
+        <span id="downvote"><%= link_to tag("span", id: "down", class: "glyphicon glyphicon-hand-down grey")%></span>
       <% else %>
-        <%= link_to tag("span", class: "glyphicon glyphicon-hand-up grey"), image_votes_path(@image, :direction => true), method: :post %>
-        <%= link_to tag("span", class: "glyphicon glyphicon-hand-down"), image_votes_path(@image, :direction => false), method: :post %>
+        <span id="upvote"><%= link_to tag("span", id: "up", class: "glyphicon glyphicon-hand-up grey")%></span>
+        <span id="downvote"><%= link_to tag("span", id: "down", class: "glyphicon glyphicon-hand-down")%></span>
       <% end %>
     <% else %>
-      <%= link_to tag("span", class: "glyphicon glyphicon-hand-up grey"), image_votes_path(@image, :direction => true), method: :post %>
-      <%= link_to tag("span", class: "glyphicon glyphicon-hand-down grey"), image_votes_path(@image, :direction => false), method: :post %>
+      <span id="upvote"><%= link_to tag("span", id: "up", class: "glyphicon glyphicon-hand-up grey")%></span>
+      <span id="downvote"><%= link_to tag("span", id: "down", class: "glyphicon glyphicon-hand-down grey")%></span>
     <% end %>
-    <span><%= VotesController.score(@image) %></span>
+    <span id="image-score"><%= VotesController.score(@image) %></span>
   </div>
 </div>
 

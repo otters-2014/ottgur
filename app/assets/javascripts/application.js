@@ -31,25 +31,27 @@
 $(document).ready(function() {
   $("#upvote").on("click", function(event) {
     event.preventDefault();
-    // alert("hi")
     $.ajax({
       url: "/images/" + imageId + "/votes",
       type: "post",
       data: {"image_id": imageId, "user_id": userId, "direction": true},
-      success: function() {
-        $("#image-score").html(imageScore + 1);
+      success: function(data) {
+        $("#image-score").html(data);
+        $("#up").removeClass("grey")
+        $("#down").addClass("grey")
       }
     });
   });
   $("#downvote").on("click", function(event) {
     event.preventDefault();
-    // alert("hi")
     $.ajax({
       url: "/images/" + imageId + "/votes",
       type: "post",
       data: {"image_id": imageId, "user_id": userId, "direction": false},
-      success: function() {
-        $("#image-score").html(imageScore - 1);
+      success: function(data) {
+        $("#image-score").html(data);
+        $("#down").removeClass("grey");
+        $("#up").addClass("grey")
       }
     });
   });

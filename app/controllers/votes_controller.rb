@@ -1,9 +1,10 @@
 class VotesController < ApplicationController
 
   def create
+  	@image = Image.find(params[:image_id])
     vote = Vote.find_or_create_by(:image_id => params[:image_id], :user_id => current_user.id)
     vote.update(:direction => params[:direction])
-    redirect_to :back
+    render partial: "vote_count"
   end
 
   def self.score(image)
