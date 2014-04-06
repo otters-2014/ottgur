@@ -1,3 +1,8 @@
+ul {
+  padding: 0;
+  margin: 0;
+}
+
 .content {
   width: 970px;
   margin: 100px auto;
@@ -5,8 +10,14 @@
 
 .show-image {
   width: 100%;
-  margin: 10px auto;
+}
+
+.show-image, .thumb img {
   border: 4px solid white;
+}
+
+.thumb img {
+  margin: 10px;
 }
 
 #favs-n-votes {
@@ -17,13 +28,10 @@
   float: right;
 }
 
-blockquote {
+blockquote, li.comment {
   padding: 0 0 0 10px;
 }
 
-li {
-  color: #4e5d6c;
-}
 
 li.comment, li.reply {
   list-style: none;
@@ -47,22 +55,32 @@ button#fake-add,
   display: none;
 }
 
-.reply {
+.reply, li.comment {
   padding: 5px 10px;
   margin-bottom: 5px;
   margin-left: 15px;
+}
+
+.reply {
   font-size: .9em;
 }
 
+li.comment {
+  font-size: 1.25em;
+}
+
 /* odd replies */
-.reply:first-of-type, .reply:nth-child(1n+2) {
+.reply:first-of-type,
+.reply:nth-child(1n+2),
+li.comment:first-of-type,
+li.comment:nth-child(1n+2) {
   background-color: #f0ad4e;
   color: #2b3e50;
   font-weight: 400;
 }
 
 /* even replies */
-.reply:nth-child(2n+2) {
+.reply:nth-child(2n+2), li.comment:nth-child(2n+2) {
   background-color: #ba5816;
   color: white;
   font-weight: 300;
@@ -85,10 +103,6 @@ input.form-control {
   text-align: right;
 }
 
-.reply .author {
-  float: right;
-}
-
 blockquote .reply small:before {
   content: none;
 }
@@ -99,4 +113,13 @@ blockquote small {
 
 a .grey {
   color: #666;
+}
+
+#user-comments .thumb img {
+  width: 50px;
+}
+
+.modal-content input[type='file'] {
+  color: white;
+  margin-bottom: 10px;
 }

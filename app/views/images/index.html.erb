@@ -6,5 +6,5 @@
 <% end %>
 
 <% @images.each do |image| %>
-<%= link_to tag('img', src: image.submission.thumb.url), image %>
+<%= link_to tag('img', src: image.submission.thumb.url), image, class: "thumb" %>
 <% end %>
