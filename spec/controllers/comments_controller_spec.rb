@@ -27,15 +27,16 @@ require 'spec_helper'
 
     let(:params) { {user_id: "1"} }
     let(:user) {User.new}
-    let(:comment_array) { [Comment.new(text: "ehllo"), Comment.new(text: "SOMETHING ELSE")]}
+    let(:comment_array) { [Comment.new(text: "ehllo"), Comment.new(text: "SOMETHING ELSE")] }
+    let(:reverse_array) { [Comment.new(text: "ehllo"), Comment.new(text: "SOMETHING ELSE")].reverse }
     describe "#index" do
       it "should return and reverse array of comment objects" do
-        # controller.stub :comments => {}
+        controller.stub(:comments) {[comment_array.reverse]}
         User.should_receive(:find).with("1").and_return(user)
         user.should_receive(:comments).and_return(comment_array)
-        comment_array.should_receive(:reverse).and_return(comment_array)
-        # assigns(:comments).should_not be_nil
+        comment_array.should_receive(:reverse).and_return(reverse_array)
         post :index, params
+        assigns(:comments).should eq reverse_array
       end
     end
   end
