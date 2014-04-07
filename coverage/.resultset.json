@@ -61,17 +61,19 @@
         1,
         null
       ],
-      "/Users/apprentice/Desktop/ottgur/app/controllers/favorites_controller.rb": [
+      "/Users/apprentice/Desktop/ottgur/app/controllers/comments_controller.rb": [
         1,
         null,
         1,
-        1,
-        1,
+        0,
+        null,
+        null,
+        null,
+        0,
         null,
         null,
         1,
         1,
-        null,
         null,
         null
       ],
@@ -82,18 +84,15 @@
         1,
         null
       ],
-      "/Users/apprentice/Desktop/ottgur/app/models/favorite.rb": [
-        1,
+      "/Users/apprentice/Desktop/ottgur/app/models/comment.rb": [
         1,
         1,
         null,
-        null,
         1,
-        0,
-        null,
+        1,
         null
       ]
     },
-    "timestamp": 1396821025
+    "timestamp": 1396831181
   }
 }
